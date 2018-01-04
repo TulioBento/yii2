@@ -1,0 +1,85 @@
+	
+	--	--	--	ORGANIZADOR PESSOAL	--	--	--
+
+	Sistema para auxilar no auxilio e organização do dia-a-dia, automatizar
+	a lista de compra, como notificações sobre dias de pagamento de conta, 
+	recebimentos. Mantendo um saldo atualizado, com num futuro uma integração	
+	com os bancos para deixar dinâmico.
+	
+	Como principal diferencial e motivador da utilização do sistema, inteligencia
+	para informar sobre a saúde, com uma ferramenta de receita, IMC, treinos
+	o que hoje já existe mais não algo tão completo como o que estamos disposto
+	a desenvolver.
+
+	Sistema inteligente de planejamento de viagens, compras de itens o qual
+	necessita de um valor maior que o acostumado.
+	
+	_______________________________________________________________________
+	
+	
+	REGRA DE NEGOCIO:
+
+	RN: Um usuario possui uma conta,
+	uma entrada deve ser atrelada a uma conta (exemplo: deposito bancário..)
+
+	_______________________________________________________________________
+
+	
+	- Financeiro Conta
+
+	id,
+	id_user,
+	id_banco, - Financeiro Banco
+	agencia,
+	conta,
+	operacao,
+	titular,
+	numero,
+	validade
+
+	- Financeiro Banco
+
+	id,
+	nome
+
+
+	- Financeiro Origem
+
+	id,
+	id_user,
+	nome
+
+	- Financeiro Movimentação
+	
+	id, 
+	id_user, 
+	id_conta,  - Financeiro Conta
+	id_origem, - Financeiro Origem (por usuario)
+	descricao, 
+	tipo (1=unica,2=fixa[todo mês]),
+	ref (1=entrada,2=saida),
+	data_,  
+	dia_,
+	valor,
+	desconto,
+	juros,
+	status  (1=ok,2=erro)
+	
+	created_
+	updated_
+	deleted_	
+
+	EXEMPLO
+	
+	1 - usuario
+	1 - conta itau
+	1 - Salário
+	descricao - 'recebimento de salario mes 12'
+	tipo - 2
+	ref - 1 Entrada
+	data_ - 06/12/2017
+	dia_ - 06
+	valor - 2700,00
+	desconto - 110,00
+	juros - 0
+	status - 1
